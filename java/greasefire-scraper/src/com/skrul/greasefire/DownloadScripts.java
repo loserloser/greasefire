@@ -48,7 +48,7 @@ public class DownloadScripts {
   public void run(File dir, boolean full) {
  
     HttpClient client = new HttpClient();
-    String url = "http://greasefire.userscripts.org/scripts?page=";
+    String url = "http://userscripts.org/scripts?page=";
     int page = 1;
     boolean done = false;
     while (!done && page < 1500) {
@@ -90,7 +90,7 @@ public class DownloadScripts {
           logger.info("page: " + page + " " + script.url + " "
               + script.installs + " " + script.updated);
               
-          HttpMethod method = new GetMethod("http://greasefire.userscripts.org/scripts/source/" + script.id + ".user.js?greasefire");
+          HttpMethod method = new GetMethod("http://userscripts.org/scripts/source/" + script.id + ".user.js?greasefire");
           try {
             client.executeMethod(method);
             String source = method.getResponseBodyAsString();
